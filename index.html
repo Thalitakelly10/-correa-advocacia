@@ -1,1136 +1,858 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Corrêa Advocacia e Consultoria Jurídica</title>
-
-<meta name="description" content="Corrêa Advocacia e Consultoria Jurídica. Atuação estratégica em Direito Tributário, Reforma Tributária, Empresarial, Cível e Família.">
-
-<style>
-
-:root{
-    --azul:#061C2E;
-    --azul2:#0B2B43;
-    --dourado:#C49A52;
-    --creme:#F5F2EA;
-    --branco:#FFFFFF;
-    --texto:#18242D;
-    --cinza:#66727A;
-}
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:var(--creme);
-    color:var(--texto);
-    line-height:1.6;
-}
-
-.container{
-    width:min(1120px, calc(100% - 40px));
-    margin:auto;
-}
-
-
-/* CABEÇALHO */
-
-header{
-    background:rgba(245,242,234,.97);
-    border-bottom:1px solid rgba(6,28,46,.12);
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.navbar{
-    min-height:82px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:13px;
-    text-decoration:none;
-}
-
-.logo-simbolo{
-    width:49px;
-    height:49px;
-    border:1px solid var(--dourado);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--dourado);
-    font-family:Georgia,serif;
-    font-size:21px;
-    font-weight:bold;
-}
-
-.logo-texto strong{
-    display:block;
-    color:var(--azul);
-    font-family:Georgia,serif;
-    font-size:28px;
-    line-height:1;
-}
-
-.logo-texto small{
-    color:#6f7478;
-    font-size:9px;
-    letter-spacing:1.3px;
-    text-transform:uppercase;
-}
-
-nav{
-    display:flex;
-    gap:27px;
-}
-
-nav a{
-    color:var(--azul);
-    text-decoration:none;
-    font-size:12px;
-    font-weight:bold;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-}
-
-nav a:hover{
-    color:var(--dourado);
-}
-
-
-/* HERO */
-
-.hero{
-    background:var(--azul);
-    color:white;
-    padding:110px 0;
-    position:relative;
-    overflow:hidden;
-}
-
-.hero:after{
-    content:"";
-    position:absolute;
-    width:520px;
-    height:520px;
-    border:1px solid rgba(196,154,82,.28);
-    border-radius:50%;
-    right:-200px;
-    top:-220px;
-}
-
-.hero-grid{
-    position:relative;
-    z-index:2;
-    display:grid;
-    grid-template-columns:1.25fr .75fr;
-    gap:70px;
-    align-items:center;
-}
-
-.tag{
-    display:block;
-    color:var(--dourado);
-    font-size:11px;
-    font-weight:bold;
-    letter-spacing:2px;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-family:Georgia,serif;
-    font-size:64px;
-    line-height:1.03;
-    font-weight:normal;
-    max-width:750px;
-}
-
-.hero p{
-    color:rgba(255,255,255,.72);
-    margin:28px 0 35px;
-    max-width:650px;
-    font-size:16px;
-}
-
-.botoes{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
-
-.botao{
-    padding:15px 24px;
-    border-radius:30px;
-    text-decoration:none;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    font-size:11px;
-    font-weight:bold;
-}
-
-.botao-dourado{
-    background:var(--dourado);
-    color:var(--azul);
-}
-
-.botao-contorno{
-    border:1px solid rgba(255,255,255,.4);
-    color:white;
-}
-
-.hero-card{
-    border:1px solid rgba(196,154,82,.4);
-    padding:38px;
-    border-radius:20px;
-    background:rgba(255,255,255,.035);
-}
-
-.hero-card small{
-    color:var(--dourado);
-    text-transform:uppercase;
-    letter-spacing:2px;
-}
-
-.hero-card h2{
-    font-family:Georgia,serif;
-    font-size:32px;
-    line-height:1.15;
-    margin:18px 0;
-    font-weight:normal;
-}
-
-.hero-card p{
-    margin:0;
-    font-size:13px;
-}
-
-
-/* SEÇÕES */
-
-.secao{
-    padding:95px 0;
-}
-
-.titulo-pequeno{
-    color:var(--dourado);
-    font-size:10px;
-    letter-spacing:2px;
-    font-weight:bold;
-    text-transform:uppercase;
-    margin-bottom:18px;
-}
-
-.titulo{
-    color:var(--azul);
-    font-family:Georgia,serif;
-    font-size:52px;
-    line-height:1.08;
-    font-weight:normal;
-}
-
-.sobre-grid{
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    gap:80px;
-}
-
-.sobre-texto{
-    color:#4d5960;
-    font-size:15px;
-}
-
-.sobre-texto p{
-    margin-bottom:20px;
-}
-
-
-/* ÁREAS */
-
-.areas{
-    background:var(--azul);
-}
-
-.areas .titulo{
-    color:white;
-    max-width:760px;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-    margin-top:50px;
-}
-
-.card{
-    min-height:240px;
-    border:1px solid rgba(255,255,255,.12);
-    padding:30px;
-    border-radius:17px;
-    background:rgba(255,255,255,.035);
-}
-
-.card:hover{
-    border-color:var(--dourado);
-    transform:translateY(-4px);
-    transition:.3s;
-}
-
-.numero{
-    color:var(--dourado);
-    font-family:Georgia,serif;
-    font-size:20px;
-}
-
-.card h3{
-    color:white;
-    font-family:Georgia,serif;
-    font-size:28px;
-    font-weight:normal;
-    margin:17px 0 12px;
-}
-
-.card p{
-    color:rgba(255,255,255,.62);
-    font-size:13px;
-}
-
-
-/* CONTEÚDOS */
-
-.conteudos{
-    background:var(--creme);
-}
-
-.conteudo-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    margin-top:45px;
-}
-
-.post{
-    background:white;
-    border-radius:17px;
-    padding:29px;
-    border-top:2px solid var(--dourado);
-    box-shadow:0 12px 30px rgba(6,28,46,.07);
-}
-
-.post small{
-    color:var(--dourado);
-    font-size:9px;
-    font-weight:bold;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-}
-
-.post h3{
-    font-family:Georgia,serif;
-    color:var(--azul);
-    font-size:27px;
-    font-weight:normal;
-    line-height:1.15;
-    margin:15px 0;
-}
-
-.post p{
-    color:var(--cinza);
-    font-size:13px;
-}
-
-
-/* CTA */
-
-.cta{
-    background:var(--azul2);
-    color:white;
-    padding:65px 0;
-}
-
-.cta-grid{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:40px;
-}
-
-.cta h2{
-    font-family:Georgia,serif;
-    font-size:45px;
-    font-weight:normal;
-    line-height:1.08;
-    max-width:760px;
-}
-
-
-/* CONTATO */
-
-.contato{
-    background:#EDE7DB;
-}
-
-.contato-grid{
-    display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:65px;
-}
-
-.formulario{
-    background:white;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 20px 50px rgba(6,28,46,.10);
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:17px;
-}
-
-.campo{
-    display:flex;
-    flex-direction:column;
-    gap:7px;
-}
-
-.campo label{
-    color:var(--azul);
-    font-size:11px;
-    font-weight:bold;
-}
-
-.campo input,
-.campo select,
-.campo textarea{
-    padding:14px;
-    border:1px solid #d9d5cc;
-    border-radius:9px;
-    font-size:14px;
-    background:#fbfaf7;
-}
-
-.completo{
-    grid-column:1/-1;
-}
-
-.enviar{
-    border:none;
-    background:var(--azul);
-    color:white;
-    padding:15px;
-    border-radius:30px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-
-/* RODAPÉ */
-
-footer{
-    background:#03131F;
-    color:rgba(255,255,255,.6);
-    padding:55px 0 25px;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:1.5fr .7fr .7fr;
-    gap:50px;
-}
-
-footer h3{
-    color:white;
-    font-family:Georgia,serif;
-    font-size:28px;
-    font-weight:normal;
-}
-
-footer h4{
-    color:white;
-    margin-bottom:13px;
-}
-
-footer a{
-    color:rgba(255,255,255,.65);
-    text-decoration:none;
-    display:block;
-    margin:8px 0;
-    font-size:12px;
-}
-
-footer a:hover{
-    color:var(--dourado);
-}
-
-.copyright{
-    border-top:1px solid rgba(255,255,255,.08);
-    margin-top:40px;
-    padding-top:20px;
-    font-size:10px;
-}
-
-
-/* RESPONSIVO */
-
-@media(max-width:850px){
-
-    nav{
-        display:none;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrêa Advocacia e Consultoria Jurídica</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .hero-grid,
-    .sobre-grid,
-    .contato-grid{
-        grid-template-columns:1fr;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .cards,
-    .conteudo-grid{
-        grid-template-columns:1fr 1fr;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #F5F2EA;
+      color: #16222B;
+      line-height: 1.6;
     }
 
-    .hero h1{
-        font-size:48px;
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
     }
 
-}
-
-@media(max-width:600px){
-
-    .cards,
-    .conteudo-grid,
-    .formulario,
-    .footer-grid{
-        grid-template-columns:1fr;
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #F5F2EA;
+      border-bottom: 1px solid rgba(6, 28, 46, 0.12);
     }
 
-    .hero{
-        padding:75px 0;
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    .hero h1{
-        font-size:42px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
     }
 
-    .titulo{
-        font-size:39px;
+    .logo-circle {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #C49A52;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #C49A52;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: bold;
     }
 
-    .cta-grid{
-        flex-direction:column;
-        align-items:flex-start;
+    .logo-text strong {
+      display: block;
+      font-family: Georgia, serif;
+      color: #061C2E;
+      font-size: 28px;
+      line-height: 1;
     }
 
-}
+    .logo-text span {
+      display: block;
+      margin-top: 4px;
+      color: #6B7378;
+      font-size: 9px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
 
-</style>
+    nav {
+      display: flex;
+      gap: 28px;
+    }
 
+    nav a {
+      color: #061C2E;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: #C49A52;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #061C2E;
+      color: white;
+      padding: 110px 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(196, 154, 82, 0.3);
+      border-radius: 50%;
+      right: -180px;
+      top: -230px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #C49A52;
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin-top: 20px;
+      font-family: Georgia, serif;
+      font-size: clamp(48px, 6vw, 76px);
+      line-height: 1.03;
+      font-weight: normal;
+      max-width: 760px;
+    }
+
+    .hero-text {
+      max-width: 660px;
+      margin: 28px 0 35px;
+      color: rgba(255,255,255,0.72);
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 49px;
+      padding: 0 25px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-gold {
+      background: #C49A52;
+      color: #061C2E;
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+    .hero-card {
+      padding: 38px;
+      border: 1px solid rgba(196,154,82,0.4);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .hero-card small {
+      color: #C49A52;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero-card h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: normal;
+      margin: 18px 0;
+    }
+
+    .hero-card p {
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+    }
+
+    .section {
+      padding: 95px 0;
+    }
+
+    .section-label {
+      color: #C49A52;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-family: Georgia, serif;
+      color: #061C2E;
+      font-size: clamp(38px, 4vw, 56px);
+      line-height: 1.08;
+      font-weight: normal;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+    }
+
+    .about-text {
+      color: #4D5960;
+      font-size: 15px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+    }
+
+    .areas {
+      background: #061C2E;
+    }
+
+    .areas .section-title {
+      color: white;
+      max-width: 780px;
+    }
+
+    .cards {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 240px;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.11);
+      background: rgba(255,255,255,0.035);
+    }
+
+    .card .number {
+      color: #C49A52;
+      font-family: Georgia, serif;
+      font-size: 21px;
+    }
+
+    .card h3 {
+      color: white;
+      font-family: Georgia, serif;
+      font-size: 29px;
+      line-height: 1.1;
+      font-weight: normal;
+      margin: 18px 0 12px;
+    }
+
+    .card p {
+      color: rgba(255,255,255,0.62);
+      font-size: 13px;
+    }
+
+    .content-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .post {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      border-top: 2px solid #C49A52;
+      box-shadow: 0 12px 30px rgba(6,28,46,0.07);
+    }
+
+    .post small {
+      color: #C49A52;
+      font-size: 9px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .post h3 {
+      font-family: Georgia, serif;
+      color: #061C2E;
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: normal;
+      margin: 16px 0;
+    }
+
+    .post p {
+      color: #68747C;
+      font-size: 13px;
+    }
+
+    .cta {
+      background: #0B2B43;
+      color: white;
+      padding: 65px 0;
+    }
+
+    .cta-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .cta h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 4vw, 50px);
+      font-weight: normal;
+      line-height: 1.08;
+      max-width: 760px;
+    }
+
+    .contact {
+      background: #EDE7DB;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 65px;
+    }
+
+    .form {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(6,28,46,0.10);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field label {
+      color: #061C2E;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #D9D5CC;
+      border-radius: 10px;
+      background: #FBFAF7;
+      font-size: 14px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .send {
+      grid-column: 1 / -1;
+      border: 0;
+      border-radius: 999px;
+      min-height: 50px;
+      background: #061C2E;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #03131F;
+      color: rgba(255,255,255,0.62);
+      padding: 60px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.7fr 0.7fr;
+      gap: 50px;
+    }
+
+    footer h3,
+    footer h4 {
+      color: white;
+    }
+
+    footer h3 {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: normal;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      display: block;
+      margin: 8px 0;
+      font-size: 12px;
+    }
+
+    .copyright {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 10px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .content-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cards,
+      .content-grid,
+      .form,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .cta-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-
 <header>
+  <div class="container navbar">
 
-<div class="container navbar">
+    <a href="#inicio" class="logo">
+      <div class="logo-circle">SC</div>
 
-<a href="#inicio" class="logo">
+      <div class="logo-text">
+        <strong>Corrêa</strong>
+        <span>Advocacia & Consultoria Jurídica</span>
+      </div>
+    </a>
 
-<div class="logo-simbolo">
-SC
-</div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Quem Somos</a>
+      <a href="#areas">Áreas</a>
+      <a href="#conteudos">Conteúdos</a>
+      <a href="#contato">Contato</a>
+    </nav>
 
-<div class="logo-texto">
-
-<strong>Corrêa</strong>
-
-<small>
-Advocacia & Consultoria Jurídica
-</small>
-
-</div>
-
-</a>
-
-
-<nav>
-
-<a href="#inicio">Início</a>
-
-<a href="#sobre">Quem Somos</a>
-
-<a href="#areas">Áreas</a>
-
-<a href="#conteudos">Conteúdos</a>
-
-<a href="#contato">Contato</a>
-
-</nav>
-
-</div>
-
+  </div>
 </header>
-
-
 
 <main>
 
-
 <section id="inicio" class="hero">
+  <div class="container hero-grid">
 
-<div class="container hero-grid">
+    <div>
+      <div class="eyebrow">ADVOCACIA E CONSULTORIA JURÍDICA</div>
 
+      <h1>
+        Estratégia jurídica com experiência,
+        segurança e visão de negócio.
+      </h1>
 
-<div>
+      <p class="hero-text">
+        Atuação técnica e personalizada para empresas,
+        empresários e pessoas físicas, com atenção especial
+        ao Direito Tributário e aos impactos da Reforma Tributária.
+      </p>
 
-<span class="tag">
-ADVOCACIA E CONSULTORIA JURÍDICA
-</span>
+      <div class="buttons">
+        <a class="btn btn-gold" href="#contato">Fale conosco</a>
+        <a class="btn btn-outline" href="#areas">Conheça nossa atuação</a>
+      </div>
+    </div>
 
-<h1>
-Estratégia jurídica com experiência,
-segurança e visão de negócio.
-</h1>
+    <div class="hero-card">
+      <small>Atuação estratégica</small>
 
-<p>
-Atuação técnica e personalizada para empresas,
-empresários e pessoas físicas, com atenção especial
-ao Direito Tributário e aos impactos da Reforma Tributária.
-</p>
+      <h2>
+        Decisões jurídicas mais seguras começam
+        com uma análise bem estruturada.
+      </h2>
 
+      <p>
+        Consultoria preventiva, planejamento tributário,
+        revisão de contratos, recuperação de créditos
+        e suporte jurídico personalizado.
+      </p>
+    </div>
 
-<div class="botoes">
-
-<a href="#contato" class="botao botao-dourado">
-Fale conosco
-</a>
-
-<a href="#areas" class="botao botao-contorno">
-Conheça nossa atuação
-</a>
-
-</div>
-
-</div>
-
-
-
-<div class="hero-card">
-
-<small>
-Atuação estratégica
-</small>
-
-<h2>
-Decisões jurídicas mais seguras começam
-com uma análise bem estruturada.
-</h2>
-
-<p>
-Consultoria preventiva, planejamento tributário,
-revisão de contratos, recuperação de créditos
-e suporte jurídico personalizado.
-</p>
-
-</div>
-
-
-</div>
-
+  </div>
 </section>
 
 
+<section id="sobre" class="section">
+  <div class="container about-grid">
 
-<section id="sobre" class="secao">
+    <div>
+      <div class="section-label">Quem Somos</div>
 
-<div class="container sobre-grid">
+      <h2 class="section-title">
+        Experiência que transforma
+        complexidade em direção.
+      </h2>
+    </div>
 
-<div>
+    <div class="about-text">
+      <p>
+        A Corrêa Advocacia e Consultoria Jurídica oferece
+        atendimento próximo, técnico e estratégico,
+        buscando compreender o cenário de cada cliente
+        antes de recomendar qualquer caminho.
+      </p>
 
-<div class="titulo-pequeno">
-Quem Somos
-</div>
+      <p>
+        Sob a atuação da advogada
+        <strong>Simone Silva Corrêa</strong>,
+        o escritório reúne sólida experiência em matéria tributária,
+        formação também em Ciências Contábeis
+        e visão prática das necessidades empresariais.
+      </p>
+    </div>
 
-<h2 class="titulo">
-Experiência que transforma complexidade em direção.
-</h2>
-
-</div>
-
-
-<div class="sobre-texto">
-
-<p>
-A Corrêa Advocacia e Consultoria Jurídica oferece
-atendimento próximo, técnico e estratégico,
-buscando compreender o cenário de cada cliente
-antes de recomendar qualquer caminho.
-</p>
-
-<p>
-Sob a atuação da advogada
-<strong>Simone Silva Corrêa</strong>,
-o escritório reúne sólida experiência em matéria tributária,
-formação também em Ciências Contábeis e visão prática
-das necessidades empresariais.
-</p>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
 
+<section id="areas" class="section areas">
+  <div class="container">
 
-<section id="areas" class="secao areas">
+    <div class="section-label">Áreas de Atuação</div>
 
-<div class="container">
+    <h2 class="section-title">
+      Assessoria jurídica pensada para prevenir
+      riscos e construir soluções.
+    </h2>
 
-<div class="titulo-pequeno">
-Áreas de atuação
-</div>
+    <div class="cards">
 
-<h2 class="titulo">
-Assessoria jurídica pensada para prevenir riscos
-e construir soluções.
-</h2>
+      <div class="card">
+        <div class="number">01</div>
+        <h3>Direito Tributário</h3>
+        <p>
+          Planejamento, revisão fiscal,
+          recuperação de créditos,
+          enquadramento e atuação preventiva.
+        </p>
+      </div>
 
+      <div class="card">
+        <div class="number">02</div>
+        <h3>Reforma Tributária</h3>
+        <p>
+          Diagnóstico de impactos, IBS e CBS,
+          formação de preço, contratos,
+          créditos e planejamento da transição.
+        </p>
+      </div>
 
-<div class="cards">
+      <div class="card">
+        <div class="number">03</div>
+        <h3>Direito Empresarial</h3>
+        <p>
+          Consultoria preventiva, contratos,
+          estruturação das relações empresariais
+          e redução de riscos jurídicos.
+        </p>
+      </div>
 
+      <div class="card">
+        <div class="number">04</div>
+        <h3>Direito Cível</h3>
+        <p>
+          Atuação consultiva em contratos,
+          obrigações, responsabilidade civil
+          e questões patrimoniais.
+        </p>
+      </div>
 
-<div class="card">
+      <div class="card">
+        <div class="number">05</div>
+        <h3>Direito de Família</h3>
+        <p>
+          Orientação jurídica em questões
+          familiares e patrimoniais,
+          com atendimento individualizado.
+        </p>
+      </div>
 
-<div class="numero">01</div>
+      <div class="card">
+        <div class="number">06</div>
+        <h3>Consultoria Jurídica</h3>
+        <p>
+          Apoio preventivo e estratégico
+          para decisões jurídicas
+          e empresariais mais seguras.
+        </p>
+      </div>
 
-<h3>Direito Tributário</h3>
-
-<p>
-Planejamento tributário, revisão fiscal,
-recuperação de créditos, enquadramento
-e atuação preventiva.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="numero">02</div>
-
-<h3>Reforma Tributária</h3>
-
-<p>
-Diagnóstico de impactos, IBS e CBS,
-formação de preço, contratos, créditos
-e planejamento para a transição.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="numero">03</div>
-
-<h3>Direito Empresarial</h3>
-
-<p>
-Consultoria preventiva, contratos,
-estruturação de relações empresariais
-e redução de riscos jurídicos.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="numero">04</div>
-
-<h3>Direito Cível</h3>
-
-<p>
-Atuação consultiva em obrigações,
-contratos, responsabilidade civil
-e questões patrimoniais.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="numero">05</div>
-
-<h3>Direito de Família</h3>
-
-<p>
-Orientação jurídica em questões familiares
-e patrimoniais com atendimento técnico
-e individualizado.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="numero">06</div>
-
-<h3>Consultoria Jurídica</h3>
-
-<p>
-Apoio preventivo e estratégico
-para decisões jurídicas e empresariais
-mais seguras.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
 
+<section id="conteudos" class="section">
+  <div class="container">
 
-<section id="conteudos" class="secao conteudos">
+    <div class="section-label">Conteúdos</div>
 
-<div class="container">
+    <h2 class="section-title">
+      Informação para decisões melhores.
+    </h2>
 
-<div class="titulo-pequeno">
-Conteúdos
-</div>
+    <div class="content-grid">
 
-<h2 class="titulo">
-Informação para decisões melhores.
-</h2>
+      <div class="post">
+        <small>Reforma Tributária</small>
 
+        <h3>
+          IBS e CBS: por que empresas precisam
+          se preparar antes da transição?
+        </h3>
 
-<div class="conteudo-grid">
+        <p>
+          Cadastro, contratos, formação de preço,
+          créditos e fluxo de caixa estão entre
+          os pontos que precisam ser avaliados.
+        </p>
+      </div>
 
+      <div class="post">
+        <small>Direito Tributário</small>
 
-<div class="post">
+        <h3>
+          Revisão tributária: quando pode existir
+          crédito ou pagamento indevido?
+        </h3>
 
-<small>
-Reforma Tributária
-</small>
+        <p>
+          Uma análise periódica pode identificar
+          oportunidades e contribuir para
+          a redução de riscos fiscais.
+        </p>
+      </div>
 
-<h3>
-IBS e CBS: por que empresas precisam
-se preparar antes da transição?
-</h3>
+      <div class="post">
+        <small>Empresarial</small>
 
-<p>
-Cadastro, contratos, formação de preço,
-créditos e fluxo de caixa estão entre
-os pontos que precisam ser avaliados.
-</p>
+        <h3>
+          Seus contratos estão preparados
+          para as mudanças tributárias?
+        </h3>
 
-</div>
+        <p>
+          Cláusulas relacionadas a preço,
+          tributos e responsabilidades precisam
+          acompanhar as mudanças legislativas.
+        </p>
+      </div>
 
-
-
-<div class="post">
-
-<small>
-Direito Tributário
-</small>
-
-<h3>
-Revisão tributária: quando pode existir
-crédito ou pagamento indevido?
-</h3>
-
-<p>
-Uma análise periódica pode identificar
-oportunidades e contribuir para
-a redução de riscos fiscais.
-</p>
-
-</div>
-
-
-
-<div class="post">
-
-<small>
-Empresarial
-</small>
-
-<h3>
-Seus contratos estão preparados
-para as mudanças tributárias?
-</h3>
-
-<p>
-Cláusulas relacionadas a preço,
-tributos e responsabilidades precisam
-acompanhar as mudanças legislativas.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
-
 
 
 <section class="cta">
+  <div class="container cta-grid">
 
-<div class="container cta-grid">
+    <div>
+      <div class="section-label">Atendimento Personalizado</div>
 
-<div>
+      <h2>
+        Seu caso merece análise individual,
+        não uma resposta genérica.
+      </h2>
+    </div>
 
-<div class="titulo-pequeno">
-Atendimento personalizado
-</div>
+    <a href="#contato" class="btn btn-gold">
+      Solicitar atendimento
+    </a>
 
-<h2>
-Seu caso merece análise individual,
-não uma resposta genérica.
-</h2>
-
-</div>
-
-
-<a href="#contato" class="botao botao-dourado">
-Solicitar atendimento
-</a>
-
-</div>
-
+  </div>
 </section>
 
 
+<section id="contato" class="section contact">
+  <div class="container contact-grid">
 
-<section id="contato" class="secao contato">
+    <div>
+      <div class="section-label">Contato</div>
 
-<div class="container contato-grid">
+      <h2 class="section-title">
+        Vamos conversar sobre o seu caso?
+      </h2>
 
+      <p style="margin-top:20px;color:#68747C;">
+        Entre em contato para solicitar atendimento
+        e apresentar brevemente a sua necessidade.
+      </p>
+    </div>
 
-<div>
+    <form class="form" id="formContato">
 
-<div class="titulo-pequeno">
-Contato
-</div>
+      <div class="field">
+        <label>Nome</label>
+        <input type="text" required placeholder="Seu nome">
+      </div>
 
-<h2 class="titulo">
-Vamos conversar sobre o seu caso?
-</h2>
+      <div class="field">
+        <label>E-mail</label>
+        <input type="email" required placeholder="seuemail@exemplo.com">
+      </div>
 
-<p style="margin-top:20px;color:#68747C;">
-Entre em contato para solicitar atendimento
-e apresentar brevemente a sua necessidade.
-</p>
+      <div class="field">
+        <label>Telefone</label>
+        <input type="tel" placeholder="(00) 00000-0000">
+      </div>
 
-</div>
+      <div class="field">
+        <label>Assunto</label>
 
+        <select>
+          <option>Direito Tributário</option>
+          <option>Reforma Tributária</option>
+          <option>Direito Empresarial</option>
+          <option>Direito Cível</option>
+          <option>Direito de Família</option>
+          <option>Outro</option>
+        </select>
+      </div>
 
+      <div class="field full">
+        <label>Mensagem</label>
 
-<form class="formulario" id="formContato">
+        <textarea
+          rows="5"
+          required
+          placeholder="Conte brevemente como podemos ajudar."></textarea>
+      </div>
 
-<div class="campo">
+      <button class="send" type="submit">
+        Enviar mensagem
+      </button>
 
-<label>Nome</label>
+    </form>
 
-<input
-type="text"
-placeholder="Seu nome"
-required>
-
-</div>
-
-
-<div class="campo">
-
-<label>E-mail</label>
-
-<input
-type="email"
-placeholder="seuemail@exemplo.com"
-required>
-
-</div>
-
-
-<div class="campo">
-
-<label>Telefone</label>
-
-<input
-type="tel"
-placeholder="(00) 00000-0000">
-
-</div>
-
-
-<div class="campo">
-
-<label>Assunto</label>
-
-<select>
-
-<option>Direito Tributário</option>
-<option>Reforma Tributária</option>
-<option>Direito Empresarial</option>
-<option>Direito Cível</option>
-<option>Direito de Família</option>
-<option>Outro</option>
-
-</select>
-
-</div>
-
-
-<div class="campo completo">
-
-<label>Mensagem</label>
-
-<textarea
-rows="5"
-placeholder="Conte brevemente como podemos ajudar."
-required></textarea>
-
-</div>
-
-
-<button
-type="submit"
-class="enviar completo">
-
-Enviar mensagem
-
-</button>
-
-</form>
-
-
-</div>
-
+  </div>
 </section>
-
 
 </main>
 
 
-
 <footer>
+  <div class="container footer-grid">
 
-<div class="container footer-grid">
+    <div>
+      <h3>Corrêa</h3>
+      <p>Advocacia & Consultoria Jurídica</p>
 
+      <p style="margin-top:15px;font-size:12px;">
+        Atuação jurídica estratégica,
+        técnica e personalizada.
+      </p>
+    </div>
 
-<div>
+    <div>
+      <h4>Navegação</h4>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Quem Somos</a>
+      <a href="#areas">Áreas</a>
+      <a href="#conteudos">Conteúdos</a>
+      <a href="#contato">Contato</a>
+    </div>
 
-<h3>
-Corrêa
-</h3>
+    <div>
+      <h4>Institucional</h4>
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
 
-<p>
-Advocacia & Consultoria Jurídica
-</p>
+  </div>
 
-<p style="margin-top:15px;font-size:12px;">
-Atuação jurídica estratégica,
-técnica e personalizada.
-</p>
-
-</div>
-
-
-
-<div>
-
-<h4>
-Navegação
-</h4>
-
-<a href="#inicio">Início</a>
-<a href="#sobre">Quem Somos</a>
-<a href="#areas">Áreas</a>
-<a href="#conteudos">Conteúdos</a>
-<a href="#contato">Contato</a>
-
-</div>
-
-
-
-<div>
-
-<h4>
-Institucional
-</h4>
-
-<a href="#">Política de Privacidade</a>
-<a href="#">Termos de Uso</a>
-
-</div>
-
-
-</div>
-
-
-<div class="container copyright">
-
-© <span id="ano"></span>
-Corrêa Advocacia e Consultoria Jurídica.
-
-</div>
-
+  <div class="container copyright">
+    © <span id="ano"></span> Corrêa Advocacia e Consultoria Jurídica.
+  </div>
 </footer>
 
 
-
 <script>
+  document.getElementById("ano").textContent =
+    new Date().getFullYear();
 
-document.getElementById("ano").textContent =
-new Date().getFullYear();
-
-
-document
-.getElementById("formContato")
-.addEventListener("submit", function(event){
-
-    event.preventDefault();
-
-    alert(
-        "Formulário funcionando. No próximo passo vamos conectá-lo ao WhatsApp ou e-mail do escritório."
-    );
-
-});
-
+  document
+    .getElementById("formContato")
+    .addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Formulário funcionando corretamente.");
+    });
 </script>
-
 
 </body>
 </html>
